@@ -1,0 +1,15 @@
+الإعداد الضروري لتشغيل TURN:
+
+1) أنشئ TURN key من Cloudflare Realtime / TURN.
+2) احتفظ بالـ uid الخاص بالمفتاح لاستخدامه كـ TURN_KEY_ID.
+3) أنشئ Cloudflare API token بالصلاحية المطلوبة لـ TURN (Calls Write).
+4) داخل مجلد المشروع:
+   npx wrangler secret put TURN_API_TOKEN
+5) أضف TURN_KEY_ID إلى vars في wrangler أو إلى Worker Environment Variables.
+6) نفّذ:
+   npx wrangler deploy
+7) اختبر:
+   /health
+   /api/ice
+
+لا تضع API token أو أي secret داخل JavaScript الذي يصل إلى المتصفح.

@@ -1,0 +1,13 @@
+{
+  "name": "cloud-video-call",
+  "private": true,
+  "version": "3.1.0",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "check": "node --check CloudVideoCall_Dashboard_Worker.js"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}

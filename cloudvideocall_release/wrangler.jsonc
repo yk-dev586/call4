@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "cloud-video-call",
+  "main": "CloudVideoCall_Dashboard_Worker.js",
+  "compatibility_date": "2026-09-23",
+  "vars": {
+    "TURN_TTL_SECONDS": "86400"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CALL_ROOM",
+        "class_name": "CallRoom"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["CallRoom"]
+    }
+  ]
+}
